@@ -1,34 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" role="img" aria-label="Honda service">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Honda car">
   <defs>
-    <linearGradient id="case" x1="62" y1="42" x2="458" y2="298" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ff233b"/>
-      <stop offset=".38" stop-color="#bd1024"/>
-      <stop offset="1" stop-color="#520711"/>
+    <linearGradient id="body" x1="112" y1="82" x2="528" y2="282" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff3046"/>
+      <stop offset=".46" stop-color="#d3132a"/>
+      <stop offset="1" stop-color="#610713"/>
     </linearGradient>
-    <linearGradient id="well" x1="96" y1="70" x2="426" y2="270" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#230308"/>
-      <stop offset=".55" stop-color="#0b090a"/>
-      <stop offset="1" stop-color="#020202"/>
-    </linearGradient>
-    <linearGradient id="hmark" x1="136" y1="76" x2="386" y2="270" gradientUnits="userSpaceOnUse">
+    <linearGradient id="glass" x1="224" y1="86" x2="446" y2="182" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff8f1"/>
-      <stop offset=".48" stop-color="#e8e0d8"/>
-      <stop offset="1" stop-color="#a69b94"/>
+      <stop offset=".55" stop-color="#d7d2cd"/>
+      <stop offset="1" stop-color="#766f6b"/>
     </linearGradient>
-    <filter id="shadow" x="-18%" y="-22%" width="136%" height="148%">
-      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".5"/>
+    <filter id="softGlow" x="-18%" y="-24%" width="136%" height="152%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000" flood-opacity=".56"/>
       <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#e8142d" flood-opacity=".34"/>
     </filter>
   </defs>
 
-  <g filter="url(#shadow)">
-    <path fill="url(#case)" d="M86 45h348c38 0 62 24 62 62v126c0 38-24 62-62 62H86c-38 0-62-24-62-62V107c0-38 24-62 62-62Z"/>
-    <path fill="#120105" d="M94 67h332c27 0 48 21 48 48v110c0 27-21 48-48 48H94c-27 0-48-21-48-48V115c0-27 21-48 48-48Z"/>
-    <path fill="url(#well)" d="M104 83h312c21 0 38 17 38 38v98c0 21-17 38-38 38H104c-21 0-38-17-38-38v-98c0-21 17-38 38-38Z"/>
-    <path fill="#fff" opacity=".12" d="M102 85h316c18 0 32 14 32 32v14C331 104 200 105 70 137v-16c0-20 13-36 32-36Z"/>
-
-    <path fill="url(#hmark)" d="M123 93h58l25 119 32-1 21-105c4-18 11-27 25-27h58l-32 132 33 1 26-119h58l-43 163h-82c-15 0-24-7-27-21l-15-67-15 67c-3 14-12 21-27 21h-82L123 93Z"/>
-    <path fill="#ed1029" d="M232 224h56c10 0 18 8 18 18v8h-92v-8c0-10 8-18 18-18Z"/>
-    <path fill="none" stroke="#ff6a78" stroke-opacity=".62" stroke-width="7" d="M92 65h336c29 0 49 20 49 49v112c0 29-20 49-49 49H92c-29 0-49-20-49-49V114c0-29 20-49 49-49Z"/>
+  <g filter="url(#softGlow)">
+    <path fill="url(#body)" d="M91 217c9-38 33-63 79-72l51-58c16-18 38-27 66-27h93c31 0 54 10 72 31l46 53c34 7 53 25 58 54l7 39c4 23-12 43-36 43H113c-18 0-31-15-28-33l6-30Z"/>
+    <path fill="#060506" d="M128 214c8-18 26-30 48-30h295c22 0 40 12 48 30l8 28H120l8-28Z"/>
+    <path fill="url(#glass)" d="M244 95c12-12 28-18 49-18h79c22 0 39 7 51 21l35 42H205l39-45Z"/>
+    <path fill="#0b090a" d="M292 86h82c17 0 30 5 40 15l21 25H229l25-28c9-8 21-12 38-12Z"/>
+    <path fill="#fff8f1" d="M191 191h56l17 56h-37l-6-21h-41l-6 21h-37l17-56h37Zm-4 25h27l-6-21h-15l-6 21Zm206-25h37l-13 56h-38l-7-26-7 26h-38l-13-56h37l6 29 9-29h32l9 29 6-29Z"/>
+    <path fill="#ed1029" d="M294 228h58c9 0 16 7 16 16v7h-90v-7c0-9 7-16 16-16Z"/>
+    <circle cx="177" cy="260" r="38" fill="#050505"/>
+    <circle cx="177" cy="260" r="17" fill="#e9dfd7"/>
+    <circle cx="463" cy="260" r="38" fill="#050505"/>
+    <circle cx="463" cy="260" r="17" fill="#e9dfd7"/>
+    <path fill="none" stroke="#ff6878" stroke-linecap="round" stroke-width="9" d="M132 202c11-25 31-40 61-45l50-58c13-15 30-22 51-22h78c26 0 45 8 59 25l43 52c26 4 43 17 51 39"/>
+    <path fill="none" stroke="#fff8f1" stroke-linecap="round" stroke-opacity=".65" stroke-width="7" d="M121 229h398"/>
   </g>
 </svg>
