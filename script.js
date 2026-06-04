@@ -7,6 +7,8 @@ const worksButton = document.querySelector("[data-show-works]");
 const worksGrid = document.querySelector("[data-works-grid]");
 const form = document.querySelector("[data-form]");
 const formStatus = document.querySelector("[data-form-status]");
+const mobileCta = document.querySelector(".mobile-cta");
+const footer = document.querySelector(".site-footer");
 
 function closeMenu() {
   burger.setAttribute("aria-expanded", "false");
@@ -59,3 +61,18 @@ document.addEventListener("click", (event) => {
   if (mobileMenu.contains(event.target) || burger.contains(event.target)) return;
   closeMenu();
 });
+
+if (mobileCta && footer) {
+  const updateMobileCta = () => {
+    const footerRect = footer.getBoundingClientRect();
+    if (footerRect.top < window.innerHeight) {
+      mobileCta.classList.add("is-hidden");
+    } else {
+      mobileCta.classList.remove("is-hidden");
+    }
+  };
+
+  updateMobileCta();
+  window.addEventListener("scroll", updateMobileCta, { passive: true });
+  window.addEventListener("resize", updateMobileCta);
+}
