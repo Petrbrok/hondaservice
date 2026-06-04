@@ -3,6 +3,8 @@ const mobileMenu = document.querySelector("[data-mobile-menu]");
 const navLinks = document.querySelectorAll("[data-mobile-menu] a");
 const priceButton = document.querySelector("[data-show-prices]");
 const priceList = document.querySelector(".price-list");
+const worksButton = document.querySelector("[data-show-works]");
+const worksGrid = document.querySelector("[data-works-grid]");
 const form = document.querySelector("[data-form]");
 const formStatus = document.querySelector("[data-form-status]");
 
@@ -26,6 +28,11 @@ navLinks.forEach((link) => {
 priceButton.addEventListener("click", () => {
   const expanded = priceList.classList.toggle("is-expanded");
   priceButton.textContent = expanded ? "Скрыть" : "Показать ещё";
+});
+
+worksButton.addEventListener("click", () => {
+  const expanded = worksGrid.classList.toggle("is-expanded");
+  worksButton.textContent = expanded ? "Скрыть" : "Показать ещё";
 });
 
 form.addEventListener("submit", (event) => {
