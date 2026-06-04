@@ -82,8 +82,8 @@ textarea {
 }
 
 .brand-mark {
-  width: 72px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
 }
 
 .brand-mark img,
@@ -385,8 +385,8 @@ h3 {
 .hero-logo-lockup {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
+  gap: 0;
+  margin-bottom: 16px;
   color: #fff;
   font-weight: 800;
 }
@@ -913,8 +913,8 @@ textarea:focus {
   }
 
   .brand-mark {
-    width: 62px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
   }
 
   .brand strong {
