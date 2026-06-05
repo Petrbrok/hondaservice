@@ -8,13 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=5">
   </head>
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Хонда-сервис">
         <span class="brand-mark" aria-hidden="true">
-          <img src="assets/honda-header-logo.svg?v=1" alt="">
+          <img src="assets/honda-header-logo.png" alt="">
         </span>
         <span>
           <strong>Хонда-сервис</strong>
@@ -68,13 +68,24 @@
 
           <aside class="hero-panel" aria-label="Ключевые данные сервиса">
             <div class="hero-logo-lockup">
-              <span>Honda & Acura профиль</span>
+              <span class="service-logo" aria-hidden="true">
+                <img src="assets/honda-header-logo.png" alt="">
+              </span>
+              <span>
+                <strong>Honda & Acura профиль</strong>
+                <small>Узкая специализация сервиса</small>
+              </span>
             </div>
-            <div class="rating-block">
-              <span class="rating-number">5,0</span>
-              <span>562 оценки</span>
+            <div class="trust-badges" aria-label="Доверие и рейтинг">
+              <div class="trust-badge">
+                <span class="rating-number">5,0</span>
+                <span>562 оценки</span>
+              </div>
+              <div class="trust-badge">
+                <span>Хорошее место</span>
+                <strong>2026</strong>
+              </div>
             </div>
-            <div class="award">Хорошее место 2026</div>
             <dl>
               <div>
                 <dt>Режим</dt>
@@ -276,6 +287,6 @@
       <a href="#booking">Записаться</a>
     </div>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>

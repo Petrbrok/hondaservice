@@ -9,6 +9,9 @@ const form = document.querySelector("[data-form]");
 const formStatus = document.querySelector("[data-form-status]");
 const mobileCta = document.querySelector(".mobile-cta");
 const footer = document.querySelector(".site-footer");
+const motionCards = document.querySelectorAll(
+  ".feature-grid article, .reviews-grid article, .booking-form, .price-item, .map-frame, .work-card"
+);
 
 function closeMenu() {
   burger.setAttribute("aria-expanded", "false");
@@ -75,4 +78,35 @@ if (mobileCta && footer) {
   updateMobileCta();
   window.addEventListener("scroll", updateMobileCta, { passive: true });
   window.addEventListener("resize", updateMobileCta);
+}
+
+if (motionCards.length) {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const mobileMotion = window.matchMedia("(hover: none), (pointer: coarse)");
+
+  const revealCards = () => {
+    motionCards.forEach((card) => card.classList.add("is-inview"));
+  };
+
+  if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+    revealCards();
+  } else if (mobileMotion.matches) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-inview");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.35,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    motionCards.forEach((card) => observer.observe(card));
+  } else {
+    revealCards();
+  }
 }
