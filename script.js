@@ -37,10 +37,7 @@ function updateOpenStatusBadge() {
   const isOpen = now >= openTime && now < closeTime;
   const openText = `${pad(schedule.openHour)}:${pad(schedule.openMinute)}`;
   const closeText = `${pad(schedule.closeHour)}:${pad(schedule.closeMinute)}`;
-  const compact = window.matchMedia("(max-width: 560px)").matches;
-  const text = compact
-    ? isOpen ? closeText : openText
-    : isOpen ? `Открыто до ${closeText}` : `Откроемся в ${openText}`;
+  const text = isOpen ? `Открыто до ${closeText}` : `Откроемся в ${openText}`;
 
   openStatusBadges.forEach((badge) => {
     badge.classList.toggle("is-open", isOpen);
