@@ -10,8 +10,44 @@ const formStatus = document.querySelector("[data-form-status]");
 const mobileCta = document.querySelector(".mobile-cta");
 const footer = document.querySelector(".site-footer");
 const motionCards = document.querySelectorAll(
-  ".feature-grid article, .reviews-grid article, .booking-form, .price-item, .map-frame, .work-card"
+  ".trust-badge, .feature-grid article, .reviews-grid article, .booking-form, .price-item, .map-frame, .work-card"
 );
+const openStatusBadges = document.querySelectorAll("[data-open-status-badge]");
+const schedule = {
+  openHour: 10,
+  openMinute: 0,
+  closeHour: 20,
+  closeMinute: 0,
+};
+
+function pad(value) {
+  return String(value).padStart(2, "0");
+}
+
+function updateOpenStatusBadge() {
+  if (!openStatusBadges.length) return;
+
+  const now = new Date();
+  const openTime = new Date(now);
+  openTime.setHours(schedule.openHour, schedule.openMinute, 0, 0);
+
+  const closeTime = new Date(now);
+  closeTime.setHours(schedule.closeHour, schedule.closeMinute, 0, 0);
+
+  const isOpen = now >= openTime && now < closeTime;
+  const openText = `${pad(schedule.openHour)}:${pad(schedule.openMinute)}`;
+  const closeText = `${pad(schedule.closeHour)}:${pad(schedule.closeMinute)}`;
+  const compact = window.matchMedia("(max-width: 560px)").matches;
+  const text = compact
+    ? isOpen ? closeText : openText
+    : isOpen ? `Открыто до ${closeText}` : `Откроемся в ${openText}`;
+
+  openStatusBadges.forEach((badge) => {
+    badge.classList.toggle("is-open", isOpen);
+    badge.classList.toggle("is-closed", !isOpen);
+    badge.textContent = text;
+  });
+}
 
 function closeMenu() {
   burger.setAttribute("aria-expanded", "false");
@@ -94,14 +130,12 @@ if (motionCards.length) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-inview");
-          observer.unobserve(entry.target);
+          entry.target.classList.toggle("is-inview", entry.intersectionRatio >= 0.38);
         });
       },
       {
-        threshold: 0.35,
-        rootMargin: "0px 0px -8% 0px",
+        threshold: [0, 0.38, 0.55],
+        rootMargin: "-16% 0px -18% 0px",
       }
     );
 
@@ -110,3 +144,7 @@ if (motionCards.length) {
     revealCards();
   }
 }
+
+updateOpenStatusBadge();
+setInterval(updateOpenStatusBadge, 60 * 1000);
+window.addEventListener("resize", updateOpenStatusBadge);
