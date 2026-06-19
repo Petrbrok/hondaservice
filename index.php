@@ -259,6 +259,6 @@ $heroImage = $state['hero_image'];
         closeHour: <?= (int) $settings['close_hour'] ?>
       };
     </script>
-    <script src="script.js?v=8"></script>
+    <script src="script.js?v=9"></script>
   </body>
 </html>

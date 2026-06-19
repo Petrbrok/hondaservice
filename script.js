@@ -6,7 +6,7 @@ const priceList = document.querySelector(".price-list");
 const worksButton = document.querySelector("[data-show-works]");
 const worksGrid = document.querySelector("[data-works-grid]");
 const mobileCta = document.querySelector(".mobile-cta");
-const footer = document.querySelector(".site-footer");
+const heroPhoneButton = document.querySelector(".hero .hero-actions .btn[href^='tel:']");
 const motionCards = document.querySelectorAll(
   ".trust-badge, .feature-grid article, .reviews-grid article, .price-item, .map-frame, .work-card"
 );
@@ -81,14 +81,11 @@ document.addEventListener("click", (event) => {
   closeMenu();
 });
 
-if (mobileCta && footer) {
+if (mobileCta && heroPhoneButton) {
   const updateMobileCta = () => {
-    const footerRect = footer.getBoundingClientRect();
-    if (footerRect.top < window.innerHeight) {
-      mobileCta.classList.add("is-hidden");
-    } else {
-      mobileCta.classList.remove("is-hidden");
-    }
+    const heroRect = heroPhoneButton.getBoundingClientRect();
+    const isVisible = heroRect.bottom > 0 && heroRect.top < window.innerHeight;
+    mobileCta.classList.toggle("is-hidden", isVisible);
   };
 
   updateMobileCta();
