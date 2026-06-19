@@ -5,15 +5,13 @@ const priceButton = document.querySelector("[data-show-prices]");
 const priceList = document.querySelector(".price-list");
 const worksButton = document.querySelector("[data-show-works]");
 const worksGrid = document.querySelector("[data-works-grid]");
-const form = document.querySelector("[data-form]");
-const formStatus = document.querySelector("[data-form-status]");
 const mobileCta = document.querySelector(".mobile-cta");
 const footer = document.querySelector(".site-footer");
 const motionCards = document.querySelectorAll(
-  ".trust-badge, .feature-grid article, .reviews-grid article, .booking-form, .price-item, .map-frame, .work-card"
+  ".trust-badge, .feature-grid article, .reviews-grid article, .price-item, .map-frame, .work-card"
 );
 const openStatusBadges = document.querySelectorAll("[data-open-status-badge]");
-const schedule = {
+const schedule = window.HS_SCHEDULE || {
   openHour: 10,
   openMinute: 0,
   closeHour: 20,
@@ -63,34 +61,19 @@ navLinks.forEach((link) => {
   link.addEventListener("click", closeMenu);
 });
 
-priceButton.addEventListener("click", () => {
-  const expanded = priceList.classList.toggle("is-expanded");
-  priceButton.textContent = expanded ? "Скрыть" : "Показать ещё";
-});
+if (priceButton && priceList) {
+  priceButton.addEventListener("click", () => {
+    const expanded = priceList.classList.toggle("is-expanded");
+    priceButton.textContent = expanded ? "Скрыть" : "Показать ещё";
+  });
+}
 
-worksButton.addEventListener("click", () => {
-  const expanded = worksGrid.classList.toggle("is-expanded");
-  worksButton.textContent = expanded ? "Скрыть" : "Показать ещё";
-});
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(form);
-  const name = String(formData.get("name") || "").trim();
-  const phone = String(formData.get("phone") || "").trim();
-  const digits = phone.replace(/\D/g, "");
-
-  if (!name || digits.length < 10) {
-    formStatus.textContent = "Заполните имя и телефон, чтобы отправить заявку.";
-    formStatus.style.color = "#ffb1b8";
-    return;
-  }
-
-  formStatus.textContent = "Заявка принята. Скоро свяжемся для подтверждения записи.";
-  formStatus.style.color = "#ffffff";
-  form.reset();
-});
+if (worksButton && worksGrid) {
+  worksButton.addEventListener("click", () => {
+    const expanded = worksGrid.classList.toggle("is-expanded");
+    worksButton.textContent = expanded ? "Скрыть" : "Показать ещё";
+  });
+}
 
 document.addEventListener("click", (event) => {
   if (!mobileMenu.classList.contains("is-open")) return;

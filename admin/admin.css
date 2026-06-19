@@ -1,0 +1,264 @@
+body {
+  margin: 0;
+  background: #101113;
+  color: #f5f2ee;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  min-width: 0;
+}
+
+.admin-wrap {
+  width: min(1160px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 60px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.admin-card {
+  margin-bottom: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 8px;
+  background: #181a1d;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.admin-row {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.admin-row label,
+.admin-muted {
+  color: #bbb;
+  font-size: 13px;
+}
+
+.admin-row label span {
+  display: block;
+  margin-top: 3px;
+  color: #777;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.admin-row input,
+.admin-row textarea,
+.admin-row select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #383c42;
+  border-radius: 6px;
+  background: #0e0f11;
+  color: #fff;
+  padding: 10px;
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.admin-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #9c1c2c;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.admin-btn.secondary {
+  background: #343840;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  border-bottom: 1px solid #30343a;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-table input,
+.admin-table textarea,
+.admin-table select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #383c42;
+  border-radius: 6px;
+  background: #0e0f11;
+  color: #fff;
+  padding: 9px;
+}
+
+.admin-flash {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: #17351f;
+}
+
+.admin-image {
+  width: 120px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.admin-image.wide {
+  width: 100%;
+  height: 132px;
+}
+
+.work-upload-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 14px 0 26px;
+}
+
+.work-upload-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #30343a;
+  border-radius: 8px;
+  background: #121417;
+}
+
+.work-upload-card strong {
+  font-size: 16px;
+}
+
+.work-upload-card input[type="file"] {
+  width: 100%;
+}
+
+.work-upload-empty {
+  display: grid;
+  place-items: center;
+  height: 132px;
+  border: 1px dashed #444a52;
+  border-radius: 6px;
+  color: #8f949b;
+  background: #0e0f11;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .admin-wrap {
+    width: calc(100% - 20px);
+    padding: 14px 0 40px;
+  }
+
+  .admin-card {
+    padding: 12px;
+  }
+
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-header {
+    display: grid;
+  }
+
+  .admin-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .admin-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .admin-table,
+  .admin-table thead,
+  .admin-table tbody,
+  .admin-table tr,
+  .admin-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-table thead {
+    display: none;
+  }
+
+  .admin-table tr {
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #30343a;
+    border-radius: 8px;
+    background: #121417;
+  }
+
+  .admin-table td {
+    box-sizing: border-box;
+    border: 0;
+    padding: 0 0 10px;
+  }
+
+  .admin-table td:last-child {
+    padding-bottom: 0;
+  }
+
+  .admin-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 5px;
+    color: #999;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .work-upload-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1080px) {
+  .work-upload-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
