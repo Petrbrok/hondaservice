@@ -672,16 +672,31 @@ dd {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .58;
+  opacity: 1;
 }
 
 .work-card.has-image::before {
+  inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(7, 7, 7, .16), rgba(7, 7, 7, .66));
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(180deg, rgba(7, 7, 7, .08) 0%, rgba(7, 7, 7, .28) 44%, rgba(7, 7, 7, .88) 100%),
+    linear-gradient(90deg, rgba(91, 13, 24, .46), transparent 58%);
 }
 
 .work-card.has-image::after {
   display: none;
+}
+
+.work-card.has-image span {
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .72);
+}
+
+.work-card.has-image strong {
+  color: #fff;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, .82);
 }
 
 .extra-work {
