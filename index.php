@@ -19,7 +19,7 @@ $heroImage = $state['hero_image'];
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=13">
+    <link rel="stylesheet" href="styles.css?v=14">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -230,7 +230,7 @@ $heroImage = $state['hero_image'];
             </div>
           </div>
           <div class="map-frame" aria-label="Карта сервиса">
-            <iframe title="Хонда-сервис на Яндекс.Картах" src="<?= hs_e($settings['map_embed_url']) ?>" loading="lazy"></iframe>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af1b503e983cde8031f4df8e3cabe21ce71ffd93f7b3863742a39ead4f91837bc&amp;width=100%25&amp;height=340&amp;lang=ru_RU&amp;scroll=true"></script>
             <div class="map-overlay">
               <span>Открыть маршрут</span>
               <a href="<?= hs_e($settings['route_url']) ?>" target="_blank" rel="noreferrer">Санкт-Петербург → <?= hs_e($settings['address_short']) ?></a>
@@ -259,6 +259,6 @@ $heroImage = $state['hero_image'];
         closeHour: <?= (int) $settings['close_hour'] ?>
       };
     </script>
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=11"></script>
   </body>
 </html>

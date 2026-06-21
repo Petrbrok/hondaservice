@@ -866,7 +866,7 @@ textarea:focus {
   width: 100%;
   height: 340px;
   border: 0;
-  filter: grayscale(.86) invert(.78) contrast(.96) brightness(.84) sepia(.12) hue-rotate(300deg) saturate(1);
+  background: #080808;
 }
 
 .map-frame::before {
