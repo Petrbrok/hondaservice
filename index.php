@@ -19,7 +19,7 @@ $heroImage = $state['hero_image'];
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=15">
+    <link rel="stylesheet" href="styles.css?v=16">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -230,12 +230,27 @@ $heroImage = $state['hero_image'];
             </div>
           </div>
           <div class="map-frame" aria-label="Карта сервиса">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af1b503e983cde8031f4df8e3cabe21ce71ffd93f7b3863742a39ead4f91837bc&amp;width=100%25&amp;height=340&amp;lang=ru_RU&amp;scroll=true"></script>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af1b503e983cde8031f4df8e3cabe21ce71ffd93f7b3863742a39ead4f91837bc&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
             <div class="map-overlay">
               <span>Открыть маршрут</span>
               <a href="<?= hs_e($settings['route_url']) ?>" target="_blank" rel="noreferrer">Санкт-Петербург → <?= hs_e($settings['address_short']) ?></a>
             </div>
           </div>
+        </div>
+        <div class="container route-guide" aria-label="Как проехать в Хонда-сервис">
+          <div class="route-guide__head">
+            <p class="eyebrow">Как проехать</p>
+            <h3>Не заезжайте в карман 8 дома. Заезд между 8 и 14 домами по Софийской улице.</h3>
+          </div>
+          <ol class="route-guide__steps">
+            <li><span>01</span><p>Сверните на светофоре и проедьте примерно 100 метров.</p></li>
+            <li><span>02</span><p>Слева будет два шлагбаума и проходная. К охране заходить не нужно.</p></li>
+            <li><span>03</span><p>Подъезжайте к правому шлагбауму и откройте водительское окно.</p></li>
+            <li><span>04</span><p>Слева от вас будет красная стойка с кнопкой домофона. Скажите охране, что вы в «Хонда-сервис».</p></li>
+            <li><span>05</span><p>После открытия шлагбаума двигайтесь по территории прямо до конца, затем держитесь правее вдоль забора.</p></li>
+            <li><span>06</span><p>Дальше увидите ворота с вывеской Honda-1. Сразу за углом находится вход в СТО.</p></li>
+          </ol>
+          <strong>Будем рады вас видеть.</strong>
         </div>
       </section>
     </main>

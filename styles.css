@@ -856,7 +856,7 @@ textarea:focus {
 
 .map-frame {
   position: relative;
-  min-height: 340px;
+  min-height: 400px;
   overflow: hidden;
   background: #080808;
 }
@@ -864,7 +864,7 @@ textarea:focus {
 .map-frame iframe {
   display: block;
   width: 100%;
-  height: 340px;
+  height: 400px;
   border: 0;
   background: #080808;
 }
@@ -910,6 +910,76 @@ textarea:focus {
   line-height: 1;
   text-transform: uppercase;
   overflow-wrap: anywhere;
+}
+
+.route-guide {
+  margin-top: 28px;
+  padding: 26px;
+  border: 1px solid rgba(143, 23, 39, .46);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(195, 38, 53, .16), transparent 34%),
+    linear-gradient(180deg, rgba(14, 15, 17, .94), rgba(7, 7, 7, .9));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .24);
+}
+
+.route-guide__head {
+  display: grid;
+  grid-template-columns: minmax(180px, .55fr) 1fr;
+  gap: 26px;
+  align-items: start;
+  margin-bottom: 22px;
+}
+
+.route-guide h3 {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(26px, 3vw, 42px);
+  line-height: .98;
+  text-transform: uppercase;
+}
+
+.route-guide__steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.route-guide__steps li {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 12px;
+  min-height: 92px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .035);
+}
+
+.route-guide__steps span {
+  color: var(--red);
+  font-family: "Oswald", sans-serif;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.route-guide__steps p {
+  margin: 0;
+  color: rgba(255, 255, 255, .86);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.route-guide > strong {
+  display: block;
+  margin-top: 18px;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
 }
 
 .mobile-cta {
@@ -1049,6 +1119,11 @@ textarea:focus {
   .contacts-grid {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .route-guide__head,
+  .route-guide__steps {
+    grid-template-columns: 1fr;
   }
 
   .hero-panel {
@@ -1296,7 +1371,29 @@ textarea:focus {
   }
 
   .map-overlay a {
-    font-size: 24px;
+    font-size: 19px;
+  }
+
+  .route-guide {
+    padding: 18px;
+  }
+
+  .route-guide h3 {
+    font-size: 28px;
+  }
+
+  .route-guide__steps li {
+    grid-template-columns: 34px 1fr;
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .route-guide__steps p {
+    font-size: 15px;
+  }
+
+  .route-guide > strong {
+    font-size: 20px;
   }
 
   .contacts {
